@@ -1,4 +1,7 @@
 d3.json("/data/states.json").then(function(_data){
+
+	var l = d3.select('#lightbox')
+		.on('click',function(){ zoom_out(); });
 	
 	function update(__data){
 		d3.select('#gallery')
@@ -9,9 +12,11 @@ d3.json("/data/states.json").then(function(_data){
 					return enter.append('div')
 						.classed('tile',true)
 						.attr('class',function(d){ return 'tile ' +d.Code; })
-						.style('background-image',function(d){ return 'url("/images/state_' +d.Code +'.png")'; });
+						.style('background-image',function(d){ return 'url("/images/state_' +d.Code +'.png")'; })
+						.on('click',function(e,d){ zoom_in(d); })
+						;
 				},
-				function(update){debugger;
+				function(update){
 					return update
 						.attr('class',function(d){ return 'tile ' +d.Code; })
 						.style('background-image',function(d){ return 'url("/images/state_' +d.Code +'.png")'; })
@@ -30,6 +35,21 @@ d3.json("/data/states.json").then(function(_data){
 			});
 		}
 		update(vdata);
+	}
+
+	function zoom_in(_d){
+		var url = 'url("/images/state_' +_d.Code +'.png")',
+				c = 'show '+_d.Code;
+		l
+			.classed('show',true)
+			.attr('class',c)
+			.style('background-image',url)
+			;
+	}
+	function zoom_out(){
+		l
+			.classed('show',false)
+			.attr('class','');
 	}
 
 	update(_data);

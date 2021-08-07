@@ -78,3 +78,34 @@ body {
 .tile:hover {
 	cursor:pointer;
 }
+
+#lightbox {
+	visibility:hidden;
+	opacity:0;
+  z-index:999;
+  position:fixed;
+	background-color:#ECEBE6;
+	background-repeat:no-repeat;
+	background-size:cover;
+	left:30vw;
+	top:0;
+	top:calc((100vh - 56vw)/2);
+  width:40vw;
+  height:56vw;
+  -webkit-transition:opacity 120ms ease;
+     -moz-transition:opacity 120ms ease;
+      -ms-transition:opacity 120ms ease;
+          transition:opacity 120ms ease;
+  -webkit-box-shadow:0px 0px 20px rgba(0,0,0,0.2);
+     -moz-box-shadow:0px 0px 20px rgba(0,0,0,0.2);
+      -ms-box-shadow:0px 0px 20px rgba(0,0,0,0.2);
+          box-shadow:0px 0px 20px rgba(0,0,0,0.2);
+}
+#lightbox.AK {
+	left:11vw;
+	width:78vw;	
+}
+#lightbox.show {
+	visibility:visible;
+	opacity:1;
+}
