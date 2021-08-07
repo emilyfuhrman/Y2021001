@@ -2,6 +2,7 @@ d3.json("/data/states.json").then(function(_data){
 
 	var l = d3.select('#lightbox')
 		.on('click',function(){ zoom_out(); });
+	var nr = d3.select('#no-results');
 	
 	function update(__data){
 		d3.select('#gallery')
@@ -25,6 +26,7 @@ d3.json("/data/states.json").then(function(_data){
 	}
 
 	function find_states(){
+		zoom_out();
 		var v = $('#search_box').val().toLowerCase(),
 				vdata;
 		if(v.length == 0){
@@ -34,6 +36,7 @@ d3.json("/data/states.json").then(function(_data){
 				return (d.Code.toLowerCase().startsWith(v) || d.State.toLowerCase().startsWith(v));
 			});
 		}
+		if(vdata.length == 0){ nr.classed('show',true); } else { nr.classed('show',false); }
 		update(vdata);
 	}
 

@@ -109,3 +109,14 @@ body {
 	visibility:visible;
 	opacity:1;
 }
+
+#no-results {
+	visibility:hidden;
+	opacity:0;
+	position:absolute;
+	left:20px;
+}
+#no-results.show {
+	visibility:visible;
+	opacity:1;
+}
