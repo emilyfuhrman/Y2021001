@@ -1,4 +1,4 @@
-d3.json("/data/states.json").then(function(_data){
+d3.json("data/states.json").then(function(_data){
 
 	var l = d3.select('#lightbox')
 		.on('click',function(){ zoom_out(); });
