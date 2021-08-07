@@ -26,21 +26,33 @@ body {
 #header {
 	position:fixed;
 	background:#FFF;
-	height:60px;
+	height:120px;
 }
 
 #header #title {
 	float:left;
 	width:100%;
-	font-size:24px;
+	font-size:20px;
 	font-weight:bold;
-	line-height:60px;
+	line-height:116px;
 	text-align:center;
 	text-transform:uppercase;
+	letter-spacing:0.025rem;
+}
+
+#search_container {
+	position:fixed;
+	top:48px;
+	left:20px;
+}
+
+#search_button {
+	width:60px;
+	height:20px;
 }
 
 #gallery {
-	margin-top:56px;
+	margin-top:116px;
 }
 
 .tile {
@@ -61,4 +73,8 @@ body {
 .tile.AK {
 	width:50vw;
 	width:calc(50vw - 2px);
+}
+
+.tile:hover {
+	cursor:pointer;
 }
