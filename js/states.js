@@ -2,6 +2,7 @@ d3.json("data/states.json").then(function(_data){
 
 	var l = d3.select('#lightbox')
 		.on('click',function(){ zoom_out(); });
+	var l_z = d3.select('#zoomed_tile');
 	var nr = d3.select('#no-results');
 	
 	function update(__data){
@@ -44,10 +45,10 @@ d3.json("data/states.json").then(function(_data){
 		var url = 'url("images/state_' +_d.Code +'.png")',
 				c = 'show '+_d.Code;
 		l
-			.classed('show',true)
+			.classed('show',true);
+		l_z
 			.attr('class',c)
-			.style('background-image',url)
-			;
+			.style('background-image',url);
 	}
 	function zoom_out(){
 		l
