@@ -2,6 +2,10 @@ d3.json("data/states.json").then(function(_data){
 
 	var l = d3.select('#lightbox')
 		.on('click',function(){ zoom_out(); });
+	var a = d3.select('#about')
+		.on('click',function(){ toggle_about(); });
+	var a_info = d3.select('#about_info')
+		.on('click',function(){ d3.select(this).classed('show',false); });
 	var l_z = d3.select('#zoomed_tile'),
 			l_a = d3.select('#zoomed_anno');
 	var nr = d3.select('#no-results');
@@ -47,8 +51,9 @@ d3.json("data/states.json").then(function(_data){
 	function zoom_in(_d){
 		var url = 'url("images_sq_SVG/images_sq_state_' +_d.Code +'.svg")',
 				c = 'show '+_d.Code;
-		l
-			.classed('show',true);
+
+		a_info.classed('show',false);
+		l.classed('show',true);
 		l_z
 			.attr('class',c)
 			.style('background-image',url);
@@ -59,6 +64,11 @@ d3.json("data/states.json").then(function(_data){
 		l
 			.classed('show',false)
 			.attr('class','');
+	}
+
+	function toggle_about(){
+		var visible = a_info.classed('show');
+		a_info.classed('show',!visible);
 	}
 
 	update(_data);
