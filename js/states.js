@@ -15,6 +15,7 @@ d3.json("data/states.json").then(function(_data){
 						.classed('tile',true)
 						.attr('class',function(d){ return 'tile ' +d.Code; })
 						.style('background-image',function(d){ return 'url("images_sq_SVG/images_sq_state_' +d.Code +'.svg")'; })
+						.html(function(d){ return '<span class="anno">' +d.Code +'</span>' })
 						.on('click',function(e,d){ zoom_in(d); })
 						;
 				},
@@ -22,6 +23,7 @@ d3.json("data/states.json").then(function(_data){
 					return update
 						.attr('class',function(d){ return 'tile ' +d.Code; })
 						.style('background-image',function(d){ return 'url("images_sq_SVG/images_sq_state_' +d.Code +'.svg")'; })
+						.html(function(d){ return '<span class="anno">' +d.Code +'</span>' })
 				}
 			);
 	}
