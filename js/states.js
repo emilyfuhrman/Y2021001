@@ -2,7 +2,8 @@ d3.json("data/states.json").then(function(_data){
 
 	var l = d3.select('#lightbox')
 		.on('click',function(){ zoom_out(); });
-	var l_z = d3.select('#zoomed_tile');
+	var l_z = d3.select('#zoomed_tile'),
+			l_a = d3.select('#zoomed_anno');
 	var nr = d3.select('#no-results');
 	
 	function update(__data){
@@ -51,6 +52,8 @@ d3.json("data/states.json").then(function(_data){
 		l_z
 			.attr('class',c)
 			.style('background-image',url);
+		l_a
+			.text(_d.Code);
 	}
 	function zoom_out(){
 		l
