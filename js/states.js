@@ -26,20 +26,20 @@ d3.json("data/states.json").then(function(_data){
 			);
 	}
 
-	function find_states(){
-		zoom_out();
-		var v = $('#search_box').val().toLowerCase(),
-				vdata;
-		if(v.length == 0){
-			vdata = _data;
-		} else{
-			vdata = _data.filter(function(d){
-				return (d.Code.toLowerCase().startsWith(v) || d.State.toLowerCase().startsWith(v));
-			});
-		}
-		if(vdata.length == 0){ nr.classed('show',true); } else { nr.classed('show',false); }
-		update(vdata);
-	}
+	// function find_states(){
+	// 	zoom_out();
+	// 	var v = $('#search_box').val().toLowerCase(),
+	// 			vdata;
+	// 	if(v.length == 0){
+	// 		vdata = _data;
+	// 	} else{
+	// 		vdata = _data.filter(function(d){
+	// 			return (d.Code.toLowerCase().startsWith(v) || d.State.toLowerCase().startsWith(v));
+	// 		});
+	// 	}
+	// 	if(vdata.length == 0){ nr.classed('show',true); } else { nr.classed('show',false); }
+	// 	update(vdata);
+	// }
 
 	function zoom_in(_d){
 		var url = 'url("images_sq_SVG/images_sq_state_' +_d.Code +'.svg")',
@@ -58,5 +58,5 @@ d3.json("data/states.json").then(function(_data){
 
 	update(_data);
 
-  $("#search_box").keyup(function(e){ find_states(); });
+  // $("#search_box").keyup(function(e){ find_states(); });
 });
