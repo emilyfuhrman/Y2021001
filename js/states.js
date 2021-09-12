@@ -14,14 +14,14 @@ d3.json("data/states.json").then(function(_data){
 					return enter.append('div')
 						.classed('tile',true)
 						.attr('class',function(d){ return 'tile ' +d.Code; })
-						.style('background-image',function(d){ return 'url("images/state_' +d.Code +'.png")'; })
+						.style('background-image',function(d){ return 'url("images_sq_SVG/images_sq_state_' +d.Code +'.svg")'; })
 						.on('click',function(e,d){ zoom_in(d); })
 						;
 				},
 				function(update){
 					return update
 						.attr('class',function(d){ return 'tile ' +d.Code; })
-						.style('background-image',function(d){ return 'url("images/state_' +d.Code +'.png")'; })
+						.style('background-image',function(d){ return 'url("images_sq_SVG/images_sq_state_' +d.Code +'.svg")'; })
 				}
 			);
 	}
@@ -42,7 +42,7 @@ d3.json("data/states.json").then(function(_data){
 	}
 
 	function zoom_in(_d){
-		var url = 'url("images/state_' +_d.Code +'.png")',
+		var url = 'url("images_sq_SVG/images_sq_state_' +_d.Code +'.svg")',
 				c = 'show '+_d.Code;
 		l
 			.classed('show',true);

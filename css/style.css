@@ -59,7 +59,8 @@ body {
 	float:left;
 	background-color:#ECEBE6;
 	background-repeat:no-repeat;
-	background-size:cover;
+	background-size:300%;
+	background-position:center;
 	width:10%;
 	height:10vw;
 	overflow:hidden;
@@ -68,10 +69,15 @@ body {
      -moz-box-sizing:border-box;
       -ms-box-sizing:border-box;
           box-sizing:border-box;
+  -webkit-transition:background 120ms ease;
+     -moz-transition:background 120ms ease;
+      -ms-transition:background 120ms ease;
+          transition:background 120ms ease;
 }
 
 .tile:hover {
 	cursor:pointer;
+	background-size:400%;
 }
 
 #lightbox {
@@ -95,11 +101,11 @@ body {
 	background-color:#ECEBE6;
 	background-repeat:no-repeat;
 	background-size:cover;
-	left:30vw;
+	left:20vw;
 	top:0;
-	top:calc((100vh - 56vw)/2);
-  width:40vw;
-  height:56vw;
+	top:calc((100vh - 60vw)/2);
+  width:60vw;
+  height:60vw;
   -webkit-transition:opacity 120ms ease;
      -moz-transition:opacity 120ms ease;
       -ms-transition:opacity 120ms ease;
@@ -108,10 +114,6 @@ body {
      -moz-box-shadow:0px 0px 20px rgba(0,0,0,0.2);
       -ms-box-shadow:0px 0px 20px rgba(0,0,0,0.2);
           box-shadow:0px 0px 20px rgba(0,0,0,0.2);
-}
-#lightbox #zoomed_tile.AK {
-	left:11vw;
-	width:78vw;	
 }
 
 #no-results {
