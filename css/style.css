@@ -26,7 +26,7 @@ body {
 	position:fixed;
 	pointer-events:none;
 	top:20vh;
-	top:calc(20vh - 30px);
+	top:calc(20vh - 20px);
 }
 
 #header #title {
@@ -53,6 +53,10 @@ body {
 	height:20px;
 }*/
 
+#gallery {
+	border:20px solid #fff;
+}
+
 .tile {
 	float:left;
 	background-color:#EFEBE9;
@@ -61,6 +65,7 @@ body {
 	background-position:center;
 	width:10%;
 	height:20vh;
+	height:calc(20vh - 8px);
 	overflow:hidden;
 	border-right:1px solid #FFF;
 	border-bottom:1px solid #FFF;
@@ -139,10 +144,11 @@ body {
 	position:relative;
 	float:left;
 	width:100%;
-	font-size:1.25rem;
+	font-size:1.5rem;
 	font-weight:bold;
+	line-height:60px;
 	text-align:center;
-	top:calc(100% - 60px);
+	top:calc(100% - 90px);
 	left:0;
 }
 
