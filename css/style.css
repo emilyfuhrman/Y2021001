@@ -24,17 +24,19 @@ body {
 
 #header {
 	position:fixed;
+	pointer-events:none;
+	top:20vh;
 }
 
 #header #title {
 	float:left;
 	width:100%;
-	font-size:20px;
+	font-size:48px;
 	font-weight:bold;
-	line-height:116px;
+	line-height:0px;
 	text-align:center;
 	text-transform:uppercase;
-	letter-spacing:0.025rem;
+	letter-spacing:0.125rem;
 }
 
 /*#search_container {
@@ -52,7 +54,7 @@ body {
 	float:left;
 	background-color:#ECEBE6;
 	background-repeat:no-repeat;
-	background-size:300%;
+	background-size:400%;
 	background-position:center;
 	width:10%;
 	height:20vh;
@@ -71,7 +73,7 @@ body {
 
 .tile:hover {
 	cursor:pointer;
-	background-size:400%;
+	background-size:500%;
 }
 
 #lightbox {
