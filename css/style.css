@@ -31,12 +31,14 @@ body {
 #header #title {
 	float:left;
 	width:100%;
+	color:#fff;
 	font-size:48px;
 	font-weight:bold;
 	line-height:0px;
+	letter-spacing:0.125rem;
 	text-align:center;
 	text-transform:uppercase;
-	letter-spacing:0.125rem;
+	text-shadow:0 0 20px rgba(0,0,0,0.05);
 }
 
 /*#search_container {
