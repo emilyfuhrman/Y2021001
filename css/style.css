@@ -154,7 +154,7 @@ body {
 }
 .tile:hover .anno {
 	opacity:1;
-	top:calc(20vh - 40px);
+	top:calc(20vh - 50px);
 }
 
 #lightbox {
